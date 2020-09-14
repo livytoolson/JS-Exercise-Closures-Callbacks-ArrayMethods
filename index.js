@@ -75,15 +75,14 @@ finalScore(inning, 9) might return:
 
 */ 
 
-// const teamOne = 'Home';
-// const teamtwo = 'Away';
 
 function finalScore(callback, numberOfInnings){
-  return callback(numberOfInnings);
+  // return callback(numberOfInnings);
+  return {'Home': callback(numberOfInnings),
+          'Away': callback(numberOfInnings),
+         } 
 }
-console.log('Home: ' + finalScore(inning, 9));
-console.log('Away: ' + finalScore(inning, 9));
-
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
