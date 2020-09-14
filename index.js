@@ -75,16 +75,15 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(game, score){
-  return game(score);
+// const teamOne = 'Home';
+// const teamtwo = 'Away';
+
+function finalScore(callback, numberOfInnings){
+  return callback(numberOfInnings);
 }
-const home = function(score){
-  return ('Home: ' ${score});
-}
-const away = function(score){
-  return ('Away: ' ${score});
-}
-console.log(finalScore(inning, 9));
+console.log('Home: ' + finalScore(inning, 9));
+console.log('Away: ' + finalScore(inning, 9));
+
 
 /* Task 4: 
 
@@ -108,8 +107,8 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, number) {
+
 }
 
 
