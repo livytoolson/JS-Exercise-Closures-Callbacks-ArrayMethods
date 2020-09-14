@@ -110,19 +110,17 @@ let getInningScore = ''
 function scoreboard(cbInningScore, cbInning, numInnings){
   let awayTeamScore = 0;
   let homeTeamScore = 0;
+  for(i = 1; i < numInnings; i ++) {
+    cbInningScore = `${i} Inning: ${awayTeamScore} - ${homeTeamScore}`;
+    console.log(cbInningScore);
+    awayTeamScore = cbInning();
+    homeTeamScore = cbInning();
+  } // for loop
 
   function cbInning(max){
     return Math.floor(Math.random() * Math.floor(max));
   };
 
-  for(i = 1; i < numInnings; i ++) {
-    cbInningScore = `${i} Inning: ${awayTeamScore} - ${homeTeamScore}`;
-    console.log(cbInningScore);
-    awayTeamScore = awayTeamScore + cbInning();
-    homeTeamScore = homeTeamScore + cbInning();
-  
-  }
-
-}
+} // scoreboard function
 
 scoreboard(getInningScore, inning, 9)
