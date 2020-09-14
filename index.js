@@ -75,11 +75,16 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(game, score){
+  return game(score);
 }
+const home = function(score){
+  return ('Home: ' ${score});
+}
+const away = function(score){
+  return ('Away: ' ${score});
+}
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
