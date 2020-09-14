@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * in counter1 let has a function scope, whereas in coutner2 let has a global scope.
  * 2. Which of the two uses a closure? How can you tell?
  * counter2 uses closure becuase it is referencing a let variable that is created in the outer scope
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * counter1 would be preferred when you are creating a game and you want to increment the score. You could set the function = to another variable which would allow you to use it for several different games at once.
 */
 
 // counter1 code
@@ -56,11 +56,10 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(max){
+  return Math.floor(Math.random() * Math.floor(max));
 }
+inning(3);
 
 /* Task 3: finalScore()
 
