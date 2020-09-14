@@ -41,7 +41,6 @@ function counterMaker() {
     count++;
   }
 }
-
 const counter1 = counterMaker();
 
 // counter2 code
@@ -59,7 +58,7 @@ Write a function called `inning` that generates a random number of points that a
 function inning(max){
   return Math.floor(Math.random() * Math.floor(max));
 }
-inning(3);
+console.log(inning(3));
 
 /* Task 3: finalScore()
 
@@ -77,7 +76,6 @@ finalScore(inning, 9) might return:
 
 
 function finalScore(callback, numberOfInnings){
-  // return callback(numberOfInnings);
   return {'Home': callback(numberOfInnings),
           'Away': callback(numberOfInnings),
          } 
@@ -106,8 +104,20 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(getInningScore, inning, number) {
+// function scoreboard(getInningScore, inning, numberOfInnings) {
+//   return{
+//     '1st inning':
+//     '2nd inning':
+//     '3rd inning':
+//     '4th inning':
+//     '5th inning':
+//     '6th inning':
+//     '7th inning':
+//     '8th inning':
+//     '9th inning':
 
-}
-
+//     'Final Score': 
+//     }
+// }
+// console.log()
 
