@@ -39,6 +39,7 @@ function counterMaker() {
   let count = 0;
   return function counter() {
     count++;
+    return count;
   }
 }
 const counter1 = counterMaker();
@@ -104,20 +105,24 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-// function scoreboard(getInningScore, inning, numberOfInnings) {
-//   return{
-//     '1st inning':
-//     '2nd inning':
-//     '3rd inning':
-//     '4th inning':
-//     '5th inning':
-//     '6th inning':
-//     '7th inning':
-//     '8th inning':
-//     '9th inning':
+let getInningScore = ''
 
-//     'Final Score': 
-//     }
-// }
-// console.log()
+function scoreboard(cbInningScore, cbInning, numInnings){
+  let awayTeamScore = 0;
+  let homeTeamScore = 0;
 
+  function cbInning(max){
+    return Math.floor(Math.random() * Math.floor(max));
+  };
+
+  for(i = 1; i < numInnings; i ++) {
+    cbInningScore = `${i} Inning: ${awayTeamScore} - ${homeTeamScore}`;
+    console.log(cbInningScore);
+    awayTeamScore = awayTeamScore + cbInning();
+    homeTeamScore = homeTeamScore + cbInning();
+  
+  }
+
+}
+
+scoreboard(getInningScore, inning, 9)
