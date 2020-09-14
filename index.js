@@ -29,7 +29,7 @@ function processFirstItem(stringList, callback) {
  * 1. What is the difference between counter1 and counter2?
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter2 uses closure becuase it is referencing a let variable that is created in the outer scope
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
 */
