@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * in counter1 let has a function scope, whereas in coutner2 let has a global scope.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter2 uses closure becuase it is referencing a let variable that is created in the outer scope
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * counter1 would be preferred when you are creating a game and you want to increment the score. You could set the function = to another variable which would allow you to use it for several different games at once.
 */
 
 // counter1 code
@@ -39,9 +39,9 @@ function counterMaker() {
   let count = 0;
   return function counter() {
     count++;
+    return count;
   }
 }
-
 const counter1 = counterMaker();
 
 // counter2 code
@@ -56,11 +56,10 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(max){
+  return Math.floor(Math.random() * Math.floor(max));
 }
+console.log(inning(3));
 
 /* Task 3: finalScore()
 
@@ -76,11 +75,13 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
 
-  /*Code Here*/
-
+function finalScore(callback, numberOfInnings){
+  return {'Home': callback(numberOfInnings),
+          'Away': callback(numberOfInnings),
+         } 
 }
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
@@ -104,8 +105,24 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function inning(max){
+  let score = Math.floor(Math.random() * Math.floor(max));
+  return score;
 }
 
+let home = 0;
+let away = 0;
 
+function scoreboard(cbgetInningScore, cbInning){
+  return `${cbInning} inning: ${cbgetInningScore}`
+}
+
+getInningScore = function(){
+  for(i = 0; i < 9; i++){
+    home = home + inning();
+    away = away + inning();
+  }
+  return `${away} - ${home}`;
+}
+
+console.log(scoreboard(getInningScore, inning(9)));
